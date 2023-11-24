@@ -1,1 +1,23 @@
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geolocalização</title>
+    <link href="styles.css" rel="stylesheet">
+  </head>
+  <body onload="localizacao()">
+    <div class="container">
+      <img src="https://img.freepik.com/vetores-premium/simbolo-de-localizacao-do-ponto-de-pino-vermelho-isolado-no-fundo-branco_120819-396.jpg">
+    </div>
+    <script>
+      function localizacao() {
+        navigator.geolocation.getCurrentPosition(function (pos) {
+          var latitude = pos.coords.latitude;
+          var longitude = pos.coords.longitude;
+          alert("Your position: " + latitude + ", " + longitude);
+        });
+      }
+    </script>
+  </body>
+</html>
